@@ -45,11 +45,17 @@ public class TodosResource {
 	@GET
 	// TODO: Supply the path annotation so that the todo id 
 	//       can be passed as parameter in the URL
-	@PATH('/{id}')
+	
+	// Below is a part of assignment
+	// @PATH('/{id}')
+	
+	
 	// TODO: Supply the annotation so that the Todo returned by
 	//       this method is converted to either JSON or XML, 
 	//       depending on client request. 
-	@PRODUCES({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	
+	//Below is apart of assignment
+	// @PRODUCES({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	
 	// To test: http://localhost:9090/morehouse/restapp/todos/1
 	//   HTTP method: GET
@@ -137,4 +143,9 @@ public class TodosResource {
         return Response.ok().entity("row " + id + " deleted").build();
     }
 	
+    public boolean validateUpdate(Todo existing, Todo update) {
+    	return update.getAssignee() != null;
+    }
+    
+    
 }
